@@ -239,7 +239,7 @@ export const FinanceDashboard: React.FC = () => {
     <div className="min-h-screen bg-brand-canvas text-brand-body font-sans">
       
       {/* Top Navigation banner */}
-      <nav className="border-b border-brand-hairline bg-brand-surface-card sticky top-0 z-40 shadow-sm">
+      <nav className="border-b border-brand-hairline bg-brand-surface-card sticky top-0 z-40 shadow-sm print:hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             
@@ -508,7 +508,7 @@ export const FinanceDashboard: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => { setViewState('listings'); setSelectedProjectId(null); }}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-brand-canvas border border-brand-hairline text-brand-body hover:bg-brand-surface-card transition cursor-pointer"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-brand-canvas border border-brand-hairline text-brand-body hover:bg-brand-surface-card transition cursor-pointer print:hidden"
                     >
                       <ArrowLeft className="h-4 w-4" />
                     </button>
@@ -517,7 +517,7 @@ export const FinanceDashboard: React.FC = () => {
                         <h2 className="text-xl font-serif font-medium text-brand-ink tracking-tight">{selectedProject.name}</h2>
                         <button
                           onClick={() => { setEditingProject(selectedProject); setShowFormModal(true); }}
-                          className="rounded p-1 text-brand-muted hover:text-brand-primary transition cursor-pointer"
+                          className="rounded p-1 text-brand-muted hover:text-brand-primary transition cursor-pointer print:hidden"
                         >
                           <Edit3 className="h-3.5 w-3.5" />
                         </button>
@@ -578,7 +578,7 @@ export const FinanceDashboard: React.FC = () => {
                 </div>
 
                 {/* Workspace navigation tabs */}
-                <div className="flex border border-brand-hairline bg-brand-surface-card p-1 rounded-lg overflow-x-auto gap-0.5">
+                <div className="flex border border-brand-hairline bg-brand-surface-card p-1 rounded-lg overflow-x-auto gap-0.5 print:hidden">
                   <button
                     onClick={() => setWorkspaceTab('metrics')}
                     className={`shrink-0 rounded-md px-4 py-2 text-xs font-semibold tracking-wide transition-all cursor-pointer ${
@@ -781,7 +781,7 @@ export const FinanceDashboard: React.FC = () => {
       </main>
 
       {/* Workspace Footer */}
-      <footer className="mt-16 border-t border-white/5 py-8 text-center text-xs text-slate-500 font-mono">
+      <footer className="mt-16 border-t border-white/5 py-8 text-center text-xs text-slate-500 font-mono print:hidden">
         <div className="container mx-auto px-4">
           <p>FinanceFeasibility Platform © 2026</p>
           <p className="mt-2 text-[10px] text-slate-650">Securely running with Node.js, Express, PostgreSQL, Drizzle ORM, and Gemini API.</p>

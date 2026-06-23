@@ -27,7 +27,7 @@ export const ReportTables: React.FC<ReportTablesProps> = ({ report, projectName 
           <p className="text-xs text-brand-body mt-0.5">Calculated over a {report.inputs.analysisYears}-year analysis period</p>
         </div>
         
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2 print:hidden">
           <button
             onClick={() => exportToCSV(report, projectName)}
             className="inline-flex items-center gap-1.5 rounded-md border border-brand-accent-teal/20 bg-brand-accent-teal/10 px-3 py-1.5 text-xs font-semibold text-brand-accent-teal hover:bg-brand-accent-teal/20 transition cursor-pointer"
@@ -47,7 +47,7 @@ export const ReportTables: React.FC<ReportTablesProps> = ({ report, projectName 
       </div>
 
       {/* Tabs */}
-      <div className="mt-6 flex border-b border-brand-hairline">
+      <div className="mt-6 flex border-b border-brand-hairline print:hidden">
         <button
           onClick={() => setActiveTab('income')}
           className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${

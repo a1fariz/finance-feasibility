@@ -72,3 +72,85 @@ input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.15);
   background: #0ea5e9;
 }
+
+/* Print optimizations stylesheet */
+@media print {
+  /* Suppress all standard interactive web controls and panels */
+  .print\:hidden,
+  button,
+  nav,
+  footer,
+  .tabs-container {
+    display: none !important;
+  }
+
+  /* Force background colors to print cleanly and prevent gray screens */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Reset main layouts to use maximum page printable boundary */
+  main, 
+  .mx-auto, 
+  .max-w-7xl,
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Project tables grid formatting for PDF rendering */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 20px 0 !important;
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  /* Force cell borders to draw dark gray for printer ink contrast */
+  th, td {
+    padding: 6px 10px !important;
+    border: 1px solid #c8c8c0 !important;
+    background-color: transparent !important;
+    color: #141413 !important;
+  }
+
+  th,
+  thead th,
+  .bg-brand-surface-soft {
+    background-color: #f0ede6 !important;
+    font-weight: bold !important;
+  }
+
+  /* Retain formatting highlight overlays */
+  .bg-brand-primary\/10,
+  .bg-brand-primary\/5 {
+    background-color: #f7f3eb !important;
+    font-weight: bold !important;
+    border-top: 2px solid #a9583e !important;
+    border-bottom: 2px solid #a9583e !important;
+  }
+
+  /* Hide custom scrollbar graphics */
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+}
