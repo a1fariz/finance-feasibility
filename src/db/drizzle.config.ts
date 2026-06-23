@@ -29,10 +29,11 @@ export default defineConfig({
   schemaFilter: ["public"],
   dbCredentials: {
     host: sqlHost,
+    port: process.env.SQL_PORT ? Number(process.env.SQL_PORT) : 5432,
     user: user,
     password: password,
     database: sqlDbName,
-    ssl: false,
+    ssl: true,
   },
   verbose: true,
 });
