@@ -8,8 +8,9 @@ A full-stack, AI-powered web application for conducting financial feasibility st
 - **Financial Engine:** Automatic calculation of Net Present Value (NPV), Internal Rate of Return (IRR), Return on Investment (ROI), and Break-even Payback Period.
 - **AI Strategic Insights:** Integrates with Gemini AI to generate professional, executive-level summaries, strengths, risks, and recommendations based on the financial metrics.
 - **Secure Authentication:** Firebase Authentication (Google Sign-In) with secure session validation.
-- **Export Capabilities:** Export your complete financial analysis and AI insights directly to PDF.
+  - **Export Capabilities:** Export your complete financial analysis and AI insights directly to PDF.
 - **Responsive Design:** Beautiful, premium UI built with Tailwind CSS and Framer Motion.
+- **Live Demo:** [https://finance-feasibility.alfarizi.my.id/](https://finance-feasibility.alfarizi.my.id/)
 
 ## 🛠️ Technology Stack
 

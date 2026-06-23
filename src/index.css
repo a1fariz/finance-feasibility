@@ -109,6 +109,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
   }
 
   /* Project tables grid formatting for PDF rendering */
+  @page {
+    size: landscape;
+    margin: 1cm;
+  }
+  
   table {
     border-collapse: collapse !important;
     width: 100% !important;
