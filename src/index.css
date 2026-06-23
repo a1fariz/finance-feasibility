@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Claude Warm Editorial Colors */
+  --color-brand-primary: #cc785c;
+  --color-brand-primary-active: #a9583e;
+  --color-brand-primary-disabled: #e6dfd8;
+  --color-brand-ink: #141413;
+  --color-brand-body: #3d3d3a;
+  --color-brand-body-strong: #252523;
+  --color-brand-muted: #6c6a64;
+  --color-brand-muted-soft: #8e8b82;
+  --color-brand-hairline: #e6dfd8;
+  --color-brand-hairline-soft: #ebe6df;
+  --color-brand-canvas: #faf9f5;
+  --color-brand-surface-soft: #f5f0e8;
+  --color-brand-surface-card: #efe9de;
+  --color-brand-surface-cream-strong: #e8e0d2;
+  --color-brand-surface-dark: #181715;
+  --color-brand-surface-dark-elevated: #252320;
+  --color-brand-surface-dark-soft: #1f1e1b;
+  --color-brand-on-primary: #ffffff;
+  --color-brand-on-dark: #faf9f5;
+  --color-brand-on-dark-soft: #a09d96;
+  --color-brand-accent-teal: #5db8a6;
+  --color-brand-accent-amber: #e8a55a;
+}
+
+/* Base custom styles styling scrollbars smoothly */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Input range styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #38bdf8;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+  transition: transform 0.1s, background 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #0ea5e9;
+}

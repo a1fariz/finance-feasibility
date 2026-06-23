@@ -1,0 +1,6 @@
+{
+  "name": "Finance Feasibility",
+  "description": "A professional financial feasibility analysis platform to evaluate investment projects with NPV, IRR, ROI, Cash Flow, and AI-driven insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
