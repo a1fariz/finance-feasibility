@@ -645,58 +645,58 @@ export const FinanceDashboard: React.FC = () => {
                         
                         <div className="mt-5 space-y-4 divide-y divide-brand-hairline text-xs font-sans">
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Capital Outlay (Capex)</span>
-                            <span className="font-bold text-white font-mono">${selectedProject.investmentCost.toLocaleString()}</span>
+                            <span className="text-brand-muted">Capital Outlay (Capex)</span>
+                            <span className="font-bold text-brand-ink font-mono">${selectedProject.investmentCost.toLocaleString()}</span>
                           </div>
                           
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Baseline Monthly Revenue</span>
-                            <span className="font-bold text-white font-mono">${selectedProject.monthlyRevenue.toLocaleString()}</span>
+                            <span className="text-brand-muted">Baseline Monthly Revenue</span>
+                            <span className="font-bold text-brand-ink font-mono">${selectedProject.monthlyRevenue.toLocaleString()}</span>
                           </div>
 
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Annual Growth trajectory</span>
-                            <span className="font-bold text-emerald-400 font-mono">{selectedProject.growthRate}%</span>
+                            <span className="text-brand-muted">Annual Growth trajectory</span>
+                            <span className="font-bold text-emerald-700 font-mono">{selectedProject.growthRate}%</span>
                           </div>
 
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Monthly Operating Expenses</span>
-                            <span className="font-bold text-white font-mono">${selectedProject.operatingCost.toLocaleString()}</span>
+                            <span className="text-brand-muted">Monthly Operating Expenses</span>
+                            <span className="font-bold text-brand-ink font-mono">${selectedProject.operatingCost.toLocaleString()}</span>
                           </div>
 
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Annual Maintenance Overhead</span>
-                            <span className="font-bold text-white font-mono">${selectedProject.maintenanceCost.toLocaleString()}</span>
+                            <span className="text-brand-muted">Annual Maintenance Overhead</span>
+                            <span className="font-bold text-brand-ink font-mono">${selectedProject.maintenanceCost.toLocaleString()}</span>
                           </div>
 
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Cost Inflation Drift</span>
-                            <span className="font-bold text-rose-450 text-rose-400 font-mono">{selectedProject.inflationRate}%</span>
+                            <span className="text-brand-muted">Cost Inflation Drift</span>
+                            <span className="font-bold text-rose-700 font-mono">{selectedProject.inflationRate}%</span>
                           </div>
 
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Tax rate</span>
-                            <span className="font-bold text-white font-mono">{selectedProject.taxRate}%</span>
+                            <span className="text-brand-muted">Tax rate</span>
+                            <span className="font-bold text-brand-ink font-mono">{selectedProject.taxRate}%</span>
                           </div>
 
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Salvage value</span>
-                            <span className="font-bold text-white font-mono">${selectedProject.residualValue.toLocaleString()}</span>
+                            <span className="text-brand-muted">Salvage value</span>
+                            <span className="font-bold text-brand-ink font-mono">${selectedProject.residualValue.toLocaleString()}</span>
                           </div>
 
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Useful Depreciation span</span>
-                            <span className="font-bold text-white font-mono">{selectedProject.depreciationYears} Yrs</span>
+                            <span className="text-brand-muted">Useful Depreciation span</span>
+                            <span className="font-bold text-brand-ink font-mono">{selectedProject.depreciationYears} Yrs</span>
                           </div>
 
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Discount hurdle (WACC)</span>
-                            <span className="font-bold text-sky-400 font-mono">{selectedProject.discountRate}%</span>
+                            <span className="text-brand-muted">Discount hurdle (WACC)</span>
+                            <span className="font-bold text-sky-700 font-mono">{selectedProject.discountRate}%</span>
                           </div>
 
                           <div className="flex items-center justify-between py-2">
-                            <span className="text-slate-400">Analysis Years</span>
-                            <span className="font-medium text-white font-mono">{selectedProject.analysisYears} Years</span>
+                            <span className="text-brand-muted">Analysis Years</span>
+                            <span className="font-medium text-brand-ink font-mono">{selectedProject.analysisYears} Years</span>
                           </div>
 
                         </div>
