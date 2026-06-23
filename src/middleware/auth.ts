@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { adminAuth } from '../lib/firebase-admin.js';
-import type { DecodedIdToken } from 'firebase-admin/auth';
+import { adminAuth, DecodedIdToken } from '../lib/firebase-admin.js';
 
 export interface AuthRequest extends Request {
   user?: DecodedIdToken;
@@ -38,7 +37,7 @@ export const requireAuth = async (
         identities: {},
         sign_in_provider: 'custom'
       }
-    } as unknown as DecodedIdToken;
+    } as DecodedIdToken;
     return next();
   }
 
