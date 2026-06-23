@@ -82,62 +82,62 @@ export const ReportTables: React.FC<ReportTablesProps> = ({ report, projectName 
 
       <div className="mt-6 overflow-x-auto">
         {activeTab === 'income' && (
-          <table className="w-full text-left font-sans text-xs">
-            <thead className="border-b border-brand-hairline uppercase tracking-wider text-brand-muted font-bold text-[10px]">
+          <table className="w-full text-left font-sans text-xs border-collapse border border-brand-hairline bg-brand-canvas">
+            <thead className="bg-brand-surface-soft uppercase tracking-wider text-brand-muted font-bold text-[10px]">
               <tr>
-                <th className="py-3 px-4">Financial Item</th>
+                <th className="border border-brand-hairline py-2.5 px-3">Financial Item</th>
                 {report.incomeStatement.map(row => (
-                  <th key={row.year} className="py-3 px-4 text-right">Year {row.year}</th>
+                  <th key={row.year} className="border border-brand-hairline py-2.5 px-3 text-right font-mono">Year {row.year}</th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-brand-hairline text-brand-body font-normal">
-              <tr className="hover:bg-brand-surface-cream">
-                <td className="py-3 px-4 font-semibold text-brand-ink text-xs font-serif">Gross Revenues</td>
+            <tbody className="text-brand-body font-normal">
+              <tr className="hover:bg-brand-surface-cream-strong/40">
+                <td className="border border-brand-hairline py-2 px-3 font-semibold text-brand-ink text-xs font-serif bg-brand-surface-soft/30">Gross Revenues</td>
                 {report.incomeStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right text-brand-accent-teal font-mono font-bold">{formatValue(row.revenue)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right text-emerald-700 font-mono font-bold">{formatValue(row.revenue)}</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream text-brand-muted">
-                <td className="py-3 px-4 pl-8">- Operating Costs</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 text-brand-muted">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 bg-brand-surface-soft/10">- Operating Costs</td>
                 {report.incomeStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">({formatValue(row.operatingCost)})</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">({formatValue(row.operatingCost)})</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream text-brand-muted">
-                <td className="py-3 px-4 pl-8">- Maintenance Overhead</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 text-brand-muted">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 bg-brand-surface-soft/10">- Maintenance Overhead</td>
                 {report.incomeStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">({formatValue(row.maintenanceCost)})</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">({formatValue(row.maintenanceCost)})</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream font-semibold bg-brand-surface-cream/50 text-brand-ink">
-                <td className="py-3 px-4">EBITDA</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 font-semibold bg-brand-surface-soft/40 text-brand-ink">
+                <td className="border border-brand-hairline py-2 px-3 bg-brand-surface-soft/20">EBITDA</td>
                 {report.incomeStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">{formatValue(row.ebitda)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">{formatValue(row.ebitda)}</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream text-brand-muted">
-                <td className="py-3 px-4 pl-8">- Asset Depreciation</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 text-brand-muted">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 bg-brand-surface-soft/10">- Asset Depreciation</td>
                 {report.incomeStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">({formatValue(row.depreciation)})</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">({formatValue(row.depreciation)})</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream font-semibold text-brand-ink">
-                <td className="py-3 px-4">Earnings Before Tax (EBT)</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 font-semibold text-brand-ink">
+                <td className="border border-brand-hairline py-2 px-3 bg-brand-surface-soft/20">Earnings Before Tax (EBT)</td>
                 {report.incomeStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">{formatValue(row.ebt)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">{formatValue(row.ebt)}</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream text-brand-muted">
-                <td className="py-3 px-4 pl-8">- Corporate Tax ({report.inputs.taxRate}%)</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 text-brand-muted">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 bg-brand-surface-soft/10">- Corporate Tax ({report.inputs.taxRate}%)</td>
                 {report.incomeStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">({formatValue(row.tax)})</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">({formatValue(row.tax)})</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-primary/5 font-bold bg-brand-primary/5 text-brand-primary border-t border-brand-primary/25">
-                <td className="py-3 px-4 text-sm font-serif">Net Income (Profits)</td>
+              <tr className="hover:bg-brand-primary/10 font-bold bg-brand-primary/5 text-brand-primary">
+                <td className="border border-brand-hairline py-2.5 px-3 text-xs font-serif bg-brand-primary/5">Net Income (Profits)</td>
                 {report.incomeStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right text-sm font-mono">{formatValue(row.netIncome)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2.5 px-3 text-right text-xs font-mono">{formatValue(row.netIncome)}</td>
                 ))}
               </tr>
             </tbody>
@@ -145,69 +145,69 @@ export const ReportTables: React.FC<ReportTablesProps> = ({ report, projectName 
         )}
 
         {activeTab === 'balance' && (
-          <table className="w-full text-left font-sans text-xs">
-            <thead className="border-b border-brand-hairline uppercase tracking-wider text-brand-muted font-bold text-[10px]">
+          <table className="w-full text-left font-sans text-xs border-collapse border border-brand-hairline bg-brand-canvas">
+            <thead className="bg-brand-surface-soft uppercase tracking-wider text-brand-muted font-bold text-[10px]">
               <tr>
-                <th className="py-3 px-4">Balance Sheet Item</th>
+                <th className="border border-brand-hairline py-2.5 px-3">Balance Sheet Item</th>
                 {report.balanceSheet.map(row => (
-                  <th key={row.year} className="py-3 px-4 text-right">{row.year === 0 ? "Year 0" : `Year ${row.year}`}</th>
+                  <th key={row.year} className="border border-brand-hairline py-2.5 px-3 text-right font-mono">{row.year === 0 ? "Year 0" : `Year ${row.year}`}</th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-brand-hairline text-brand-body font-normal">
-              <tr className="hover:bg-brand-surface-cream font-semibold text-brand-ink bg-brand-surface-cream/50">
-                <td className="py-2.5 px-4 font-serif" colSpan={report.balanceSheet.length + 1}>ASSETS:</td>
+            <tbody className="text-brand-body font-normal">
+              <tr className="bg-brand-surface-soft/60 font-semibold text-brand-ink">
+                <td className="border border-brand-hairline py-2 px-3 font-serif" colSpan={report.balanceSheet.length + 1}>ASSETS:</td>
               </tr>
-              <tr className="hover:bg-brand-surface-cream">
-                <td className="py-3 px-4 pl-8 text-brand-muted">Gross Fixed Assets (Capex)</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 text-brand-muted bg-brand-surface-soft/10">Gross Fixed Assets (Capex)</td>
                 {report.balanceSheet.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">{formatValue(row.grossFixedAssets)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">{formatValue(row.grossFixedAssets)}</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream text-brand-muted">
-                <td className="py-3 px-4 pl-8">- Accumulated Depreciation</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 text-brand-muted">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 bg-brand-surface-soft/10">- Accumulated Depreciation</td>
                 {report.balanceSheet.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">({formatValue(row.accumulatedDepreciation)})</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">({formatValue(row.accumulatedDepreciation)})</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream font-semibold">
-                <td className="py-3 px-4 pl-8 text-brand-ink">Net Fixed Assets (Book Value)</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 font-semibold">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 text-brand-ink bg-brand-surface-soft/15">Net Fixed Assets (Book Value)</td>
                 {report.balanceSheet.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">{formatValue(row.netFixedAssets)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">{formatValue(row.netFixedAssets)}</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream">
-                <td className="py-3 px-4 pl-8 text-brand-muted">Project Cumulative Cash</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 text-brand-muted bg-brand-surface-soft/10">Project Cumulative Cash</td>
                 {report.balanceSheet.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right text-brand-accent-teal font-mono font-semibold">{formatValue(row.cumulativeCash)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right text-emerald-700 font-mono font-semibold">{formatValue(row.cumulativeCash)}</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-primary/5 font-bold bg-brand-primary/5 text-brand-primary border-t border-brand-primary/25">
-                <td className="py-3 px-4 text-xs font-serif pl-8">TOTAL PROJECT ASSETS</td>
+              <tr className="hover:bg-brand-primary/10 font-bold bg-brand-primary/5 text-brand-primary">
+                <td className="border border-brand-hairline py-2.5 px-3 text-xs font-serif pl-6 bg-brand-primary/5">TOTAL PROJECT ASSETS</td>
                 {report.balanceSheet.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right text-xs font-mono">{formatValue(row.totalAssets)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2.5 px-3 text-right text-xs font-mono">{formatValue(row.totalAssets)}</td>
                 ))}
               </tr>
 
-              <tr className="hover:bg-brand-surface-cream font-semibold text-brand-ink bg-brand-surface-cream/50">
-                <td className="py-2.5 px-4 font-serif" colSpan={report.balanceSheet.length + 1}>EQUITY & CAPITAL:</td>
+              <tr className="bg-brand-surface-soft/60 font-semibold text-brand-ink">
+                <td className="border border-brand-hairline py-2 px-3 font-serif" colSpan={report.balanceSheet.length + 1}>EQUITY & CAPITAL:</td>
               </tr>
-              <tr className="hover:bg-brand-surface-cream">
-                <td className="py-3 px-4 pl-8 text-brand-muted">Initial Equity Contribution</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 text-brand-muted bg-brand-surface-soft/10">Initial Equity Contribution</td>
                 {report.balanceSheet.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">{formatValue(row.initialEquity)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">{formatValue(row.initialEquity)}</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream">
-                <td className="py-3 px-4 pl-8 text-brand-muted">Retained Project Earnings</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40">
+                <td className="border border-brand-hairline py-2 px-3 pl-6 text-brand-muted bg-brand-surface-soft/10">Retained Project Earnings</td>
                 {report.balanceSheet.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right font-mono">{formatValue(row.retainedEarnings)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right font-mono">{formatValue(row.retainedEarnings)}</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-primary/5 font-bold bg-brand-primary/5 text-brand-primary border-t border-brand-primary/25">
-                <td className="py-3 px-4 text-xs font-serif pl-8">TOTAL CAPITAL EQUITY</td>
+              <tr className="hover:bg-brand-primary/10 font-bold bg-brand-primary/5 text-brand-primary">
+                <td className="border border-brand-hairline py-2.5 px-3 text-xs font-serif pl-6 bg-brand-primary/5">TOTAL CAPITAL EQUITY</td>
                 {report.balanceSheet.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right text-xs font-mono">{formatValue(row.totalEquity)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2.5 px-3 text-right text-xs font-mono">{formatValue(row.totalEquity)}</td>
                 ))}
               </tr>
             </tbody>
@@ -215,58 +215,58 @@ export const ReportTables: React.FC<ReportTablesProps> = ({ report, projectName 
         )}
 
         {activeTab === 'cashflow' && (
-          <table className="w-full text-left font-sans text-xs">
-            <thead className="border-b border-brand-hairline uppercase tracking-wider text-brand-muted font-bold text-[10px]">
+          <table className="w-full text-left font-sans text-xs border-collapse border border-brand-hairline bg-brand-canvas">
+            <thead className="bg-brand-surface-soft uppercase tracking-wider text-brand-muted font-bold text-[10px]">
               <tr>
-                <th className="py-3 px-4">Cash Flow Item</th>
+                <th className="border border-brand-hairline py-2.5 px-3">Cash Flow Item</th>
                 {report.cashFlowStatement.map(row => (
-                  <th key={row.year} className="py-3 px-4 text-right">{row.year === 0 ? "Year 0" : `Year ${row.year}`}</th>
+                  <th key={row.year} className="border border-brand-hairline py-2.5 px-3 text-right font-mono">{row.year === 0 ? "Year 0" : `Year ${row.year}`}</th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-brand-hairline text-brand-body font-normal">
-              <tr className="hover:bg-brand-surface-cream">
-                <td className="py-3 px-4 font-semibold text-brand-ink">Operating Cash Inflows</td>
+            <tbody className="text-brand-body font-normal">
+              <tr className="hover:bg-brand-surface-cream-strong/40">
+                <td className="border border-brand-hairline py-2 px-3 font-semibold text-brand-ink bg-brand-surface-soft/15">Operating Cash Inflows</td>
                 {report.cashFlowStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right text-brand-accent-teal font-mono">
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right text-emerald-700 font-mono">
                     {row.year === 0 ? "-" : formatValue(row.operatingCashFlow)}
                   </td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream">
-                <td className="py-3 px-4 font-semibold text-brand-ink">Capital / Salvage Investments</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40">
+                <td className="border border-brand-hairline py-2 px-3 font-semibold text-brand-ink bg-brand-surface-soft/15">Capital / Salvage Investments</td>
                 {report.cashFlowStatement.map(row => (
-                  <td key={row.year} className={`py-3 px-4 text-right font-mono ${row.investingCashFlow < 0 ? 'text-brand-primary font-semibold' : 'text-brand-accent-teal'}`}>
+                  <td key={row.year} className={`border border-brand-hairline py-2 px-3 text-right font-mono ${row.investingCashFlow < 0 ? 'text-brand-primary font-semibold' : 'text-emerald-700'}`}>
                     {row.investingCashFlow === 0 ? "-" : formatValue(row.investingCashFlow)}
                   </td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream font-bold bg-brand-surface-cream/50 text-brand-ink">
-                <td className="py-3 px-4 font-serif">Net Cash Flow</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 font-bold bg-brand-surface-soft/30 text-brand-ink">
+                <td className="border border-brand-hairline py-2 px-3 font-serif bg-brand-surface-soft/20">Net Cash Flow</td>
                 {report.cashFlowStatement.map(row => (
-                  <td key={row.year} className={`py-3 px-4 text-right font-mono ${row.totalCashFlow < 0 ? 'text-brand-primary font-bold' : 'text-brand-accent-teal'}`}>
+                  <td key={row.year} className={`border border-brand-hairline py-2 px-3 text-right font-mono ${row.totalCashFlow < 0 ? 'text-brand-primary font-bold' : 'text-emerald-700'}`}>
                     {formatValue(row.totalCashFlow)}
                   </td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream text-brand-muted">
-                <td className="py-3 px-4 pl-4 font-sans">Discount Factor ({report.inputs.discountRate}%)</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40 text-brand-muted">
+                <td className="border border-brand-hairline py-2 px-3 pl-4 font-sans bg-brand-surface-soft/10">Discount Factor ({report.inputs.discountRate}%)</td>
                 {report.cashFlowStatement.map(row => (
-                  <td key={row.year} className="py-3 px-4 text-right text-brand-muted font-mono">{row.discountFactor.toFixed(4)}</td>
+                  <td key={row.year} className="border border-brand-hairline py-2 px-3 text-right text-brand-muted font-mono">{row.discountFactor.toFixed(4)}</td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-surface-cream">
-                <td className="py-3 px-4 pl-4 font-semibold text-brand-ink">Discounted Net Cash Flow</td>
+              <tr className="hover:bg-brand-surface-cream-strong/40">
+                <td className="border border-brand-hairline py-2 px-3 pl-4 font-semibold text-brand-ink bg-brand-surface-soft/15">Discounted Net Cash Flow</td>
                 {report.cashFlowStatement.map(row => (
-                  <td key={row.year} className={`py-3 px-4 text-right font-mono font-medium ${row.discountedCashFlow < 0 ? 'text-brand-primary' : 'text-brand-primary font-semibold'}`}>
+                  <td key={row.year} className={`border border-brand-hairline py-2 px-3 text-right font-mono font-medium ${row.discountedCashFlow < 0 ? 'text-brand-primary' : 'text-brand-primary font-semibold'}`}>
                     {formatValue(row.discountedCashFlow)}
                   </td>
                 ))}
               </tr>
-              <tr className="hover:bg-brand-primary/5 font-bold bg-brand-primary/5 text-brand-primary border-t border-brand-primary/25">
-                <td className="py-3 px-4 text-sm font-serif">Cumulative Project Net balance</td>
+              <tr className="hover:bg-brand-primary/10 font-bold bg-brand-primary/5 text-brand-primary">
+                <td className="border border-brand-hairline py-2.5 px-3 text-xs font-serif bg-brand-primary/5">Cumulative Project Net balance</td>
                 {report.cashFlowStatement.map(row => (
-                  <td key={row.year} className={`py-3 px-4 text-right text-sm font-mono ${row.cumulativeCashFlow < 0 ? 'text-brand-primary' : 'text-brand-accent-teal font-bold'}`}>
+                  <td key={row.year} className={`border border-brand-hairline py-2.5 px-3 text-right text-xs font-mono ${row.cumulativeCashFlow < 0 ? 'text-brand-primary' : 'text-emerald-700 font-bold'}`}>
                     {formatValue(row.cumulativeCashFlow)}
                   </td>
                 ))}
