@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FeasibilityReports } from '../utils/finance.ts';
-import { exportToCSV, exportToPDF } from '../utils/exporter.ts';
+import { exportToExcel, exportToPDF } from '../utils/exporter.ts';
 import { FileSpreadsheet, Printer } from 'lucide-react';
 
 interface ReportTablesProps {
@@ -29,11 +29,11 @@ export const ReportTables: React.FC<ReportTablesProps> = ({ report, projectName 
         
         <div className="flex flex-wrap items-center gap-2 print:hidden">
           <button
-            onClick={() => exportToCSV(report, projectName)}
+            onClick={() => exportToExcel(report, projectName)}
             className="inline-flex items-center gap-1.5 rounded-md border border-brand-accent-teal/20 bg-brand-accent-teal/10 px-3 py-1.5 text-xs font-semibold text-brand-accent-teal hover:bg-brand-accent-teal/20 transition cursor-pointer"
           >
             <FileSpreadsheet className="h-3.5 w-3.5" />
-            Excel (CSV)
+            Excel (.xlsx)
           </button>
           
           <button
