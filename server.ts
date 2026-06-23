@@ -9,11 +9,18 @@ import { users, projects } from "./src/db/schema.ts";
 import { eq, and } from "drizzle-orm";
 import { generateFeasibilityReport } from "./src/utils/finance.ts";
 import { getGemini } from "./src/lib/gemini.ts";
+import helmet from "helmet";
+import cors from "cors";
+import rateLimit from "express-rate-limit";
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
+  app.use(helmet({
+    contentSecurityPolicy: false, // Disabled for Vite SPA compatibility
+  }));
+  app.use(cors());
   app.use(express.json());
 
   // Health check endpoint
@@ -168,8 +175,17 @@ async function startServer() {
     }
   });
 
+  // AI Insights Rate Limiter
+  const insightsLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour window
+    max: 15, // Limit each IP to 15 requests per hour
+    message: { error: "Too many AI insight requests from this IP, please try again after an hour" },
+    standardHeaders: true,
+    legacyHeaders: false,
+  });
+
   // Project insights (AI Insights from Gemini)
-  app.get("/api/projects/:id/insights", requireAuth, async (req: AuthRequest, res) => {
+  app.get("/api/projects/:id/insights", requireAuth, insightsLimiter, async (req: AuthRequest, res) => {
     try {
       const fbUser = req.user!;
       const localUser = await getOrCreateUser(fbUser.uid, fbUser.email || "no-email@user.com");
