@@ -1,9 +1,9 @@
 {
-  "projectId": "core-composition-sdckx",
-  "appId": "1:256567144322:web:b8a0e0b86da7a5421f699b",
-  "apiKey": "AIzaSyANPDe7MvI95OX_nwAOPylfcA-Vd3TgFkI",
-  "authDomain": "core-composition-sdckx.firebaseapp.com",
-  "storageBucket": "core-composition-sdckx.firebasestorage.app",
-  "messagingSenderId": "256567144322",
-  "measurementId": ""
+  "apiKey": "AIzaSyABFO4bb18XU0x5_cixititc_KSnlzfm7M",
+  "authDomain": "finance-feasibility.firebaseapp.com",
+  "projectId": "finance-feasibility",
+  "storageBucket": "finance-feasibility.firebasestorage.app",
+  "messagingSenderId": "888402015937",
+  "appId": "1:888402015937:web:f9b5421246109c73674640",
+  "measurementId": "G-TTQ0HQL6C5"
 }
