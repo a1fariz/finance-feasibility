@@ -1,4 +1,4 @@
-import { FeasibilityReports } from './finance.ts';
+import { FeasibilityReports } from './finance.js';
 
 /**
  * Format helper for currency
