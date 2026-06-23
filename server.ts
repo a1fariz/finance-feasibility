@@ -13,9 +13,8 @@ import helmet from "helmet";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 
-async function startServer() {
-  const app = express();
-  const PORT = Number(process.env.PORT) || 3000;
+export const app = express();
+const PORT = Number(process.env.PORT) || 3000;
 
   app.use(helmet({
     contentSecurityPolicy: false, // Disabled for Vite SPA compatibility
@@ -393,25 +392,30 @@ Respond strictly inside a JSON block with these exact keys. Do not explain extra
   });
 
   // Client static assets serving and SPA fallback router
-  const distPath = path.join(process.cwd(), "dist");
-  const isProduction = process.env.NODE_ENV === "production" || fs.existsSync(path.join(distPath, "index.html"));
-
-  if (!isProduction) {
-    const vite = await createViteServer({
-      server: { middlewareMode: true },
-      appType: "spa",
+  if (process.env.NODE_ENV !== "production" && !process.env.VERCEL) {
+    import("vite").then(async ({ createServer }) => {
+      const vite = await createServer({
+        server: { middlewareMode: true },
+        appType: "spa",
+      });
+      app.use(vite.middlewares);
+      app.listen(PORT, "0.0.0.0", () => {
+        console.log(`FinanceFeasibility full-stack server running on http://0.0.0.0:${PORT}`);
+      });
     });
-    app.use(vite.middlewares);
   } else {
+    const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
+    
+    // Only listen if not running in Vercel Serverless environment
+    if (!process.env.VERCEL) {
+      app.listen(PORT, "0.0.0.0", () => {
+        console.log(`FinanceFeasibility full-stack server running on http://0.0.0.0:${PORT}`);
+      });
+    }
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`FinanceFeasibility full-stack server running on http://0.0.0.0:${PORT}`);
-  });
-}
-
-startServer();
+export default app;
