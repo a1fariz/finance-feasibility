@@ -1,6 +1,9 @@
 import { initializeApp, getApps } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
-import firebaseConfig from '../../firebase-applet-config.json' assert { type: 'json' };
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const firebaseConfig = require('../../firebase-applet-config.json');
 
 if (!getApps().length) {
   initializeApp({
