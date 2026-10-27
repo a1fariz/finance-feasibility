@@ -121,3 +121,7 @@ Proyek ini telah dikonfigurasi penuh untuk di-deploy ke **Vercel** sebagai monor
 
 Dikembangkan oleh **Muhammad Hafiz Alfarizi** ([@a1fariz](https://github.com/a1fariz)).  
 *Dibuat untuk mempermudah pengambilan keputusan investasi berbasis data dan AI.*
+
+---
+
+[Portfolio Alfa Rizi](https://alfarizi.my.id) · [GitHub profile](https://github.com/a1fariz) · [Contact](mailto:alfarizi.developer@gmail.com)
